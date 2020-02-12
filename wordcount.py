@@ -40,6 +40,7 @@ print_words() and print_top().
 """
 
 import sys
+from pathlib2 import Path
 
 # +++your code here+++
 # Define print_words(filename) and print_top(filename) functions.
@@ -47,7 +48,20 @@ import sys
 # and builds and returns a word/count dict for it.
 # Then print_words() and print_top() can just call the utility function.
 
-###
+def print_words(filename):  
+    with open ('small.txt', 'r') as f:
+        for line in f:
+            f.read(line)
+            #word_list = (' ').join(words) 
+        print(f.mode)
+            
+        
+
+
+
+def  print_top(filename):
+    return
+
 
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
