@@ -48,12 +48,20 @@ from pathlib2 import Path
 # and builds and returns a word/count dict for it.
 # Then print_words() and print_top() can just call the utility function.
 
+
 def print_words(filename):  
-    with open ('small.txt', 'r') as f:
+    with open (filename, 'r') as f:
         for line in f:
-            f.read(line)
-            #word_list = (' ').join(words) 
-        print(f.mode)
+            data = f.read()
+            words = data.lower().split(' ')
+            word_dict = {}
+
+            if word in words:
+                words(word) += 1
+            else:
+                words(word) = 1 
+        return words
+        
             
         
 
