@@ -38,7 +38,7 @@ Optional: define a helper function to avoid code duplication inside
 print_words() and print_top().
 
 """
-
+#This assessment took me WAY, WAY, WAY too long.  Five points??? Not cool.
 import sys
 
 # +++your code here+++
