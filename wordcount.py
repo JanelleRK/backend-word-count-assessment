@@ -40,28 +40,27 @@ print_words() and print_top().
 """
 
 import sys
-from pathlib2 import Path
 
 # +++your code here+++
 # Define print_words(filename) and print_top(filename) functions.
 # You could write a helper utility function that reads a file
 # and builds and returns a word/count dict for it.
 # Then print_words() and print_top() can just call the utility function.
-
+def helper(filename):
+    word_dict = {}
+    with open(filename, 'r') as f:
+     for line in f:
+        word_list = line.lower().split()
+        for word in word_list:
+            if word in word_dict:
+                word_dict[word] += 1
+            else:
+                word_dict[word] = 1
+    print(word_dict)
 
 def print_words(filename):  
-    with open (filename, 'r') as f:
-        for line in f:
-            data = f.read()
-            words = data.lower().split(' ')
-            word_dict = {}
-
-            if word in words:
-                words(word) += 1
-            else:
-                words(word) = 1 
-        return words
-        
+    
+    return
             
         
 
