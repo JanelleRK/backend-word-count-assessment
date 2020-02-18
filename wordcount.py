@@ -64,22 +64,22 @@ def print_words(filename):
     for word in words:
         count = word_count[word]
         print(word, count)
-print_words('small.txt')
 
 
+def word_counter(t):
+    count = t[1]
+    return count
 
 def  print_top(filename):
     word_count = word_count_helper(filename)
-    top_words = sorted(word_count.top_words(), key = wordCount, reverse = True)
-    for top_word in top_words[::20]:
+    top_words = sorted(word_count.items(), key = word_counter, reverse = True)
+    for top_word in top_words[:20]:
         word = top_word[0]
         count = top_word[1]
         print(word, count)
-print_top('small.txt')
+        
+#print_top('small.txt')
 
-def wordCount(t):
-    count = t[1]
-    return count
 
 
 # This basic command line argument parsing code is provided and
@@ -88,7 +88,7 @@ def wordCount(t):
 
 def main():
     if len(sys.argv) != 3:
-        print 'usage: python wordcount.py {--count | --topcount} file'
+        print('usage: python wordcount.py {--count | --topcount} file')
         sys.exit(1)
 
     option = sys.argv[1]
@@ -98,7 +98,7 @@ def main():
     elif option == '--topcount':
         print_top(filename)
     else:
-        print 'unknown option: ' + option
+        print('unknown option: ' + option)
         sys.exit(1)
 
 
